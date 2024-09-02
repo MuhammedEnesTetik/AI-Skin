@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tahmin Sonucu - AI-Skin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='w-bagr.png') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI-Skin</h1>
+            <img src="{{ url_for('static', filename='w-bagr.png') }}" alt="AI-Skin Logo" class="logo">
+        </header>
+
+        <section class="result">
+            <h2>Tahmin Sonucu</h2>
+            <img src="{{ url_for('static', filename=image_filename) }}" alt="Yüklenen Resim" class="uploaded-image">
+            <p class="prediction">Tahmin Edilen Hastalık: <span class="highlight">{{ prediction }}</span></p>
+            <p>{{ disease_info }}</p>
+        </section>
+
+        <a href="/" class="button">Ana Sayfaya Dön</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

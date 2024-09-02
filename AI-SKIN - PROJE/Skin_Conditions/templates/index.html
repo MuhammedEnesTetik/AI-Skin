@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Skin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='w-bagr.png') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI-Skin</h1>
+            <img src="{{ url_for('static', filename='w-bagr.png') }}" alt="AI-Skin Logo" class="logo">
+        </header>
+
+        <section class="info">
+            <h2>AI-Skin Nedir?</h2>
+            <p>Cildiniz sağlığınızın bir yansımasıdır. AI-Skin, yüklediğiniz resim üzerinden cilt hastalığını tahmin eder ve bu hastalık hakkında bilgi verir.</p>
+        </section>
+
+        <section class="upload">
+            <h2>Resim Yükle</h2>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <input type="file" name="file" id="file-input">
+                <label for="file-input" class="file-label">Dosya Seç</label>
+                <p class="file-name">Seçilen dosya yok</p>
+                <button type="submit">Tahmin Et</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
